@@ -20,26 +20,6 @@ public class HngBackendBiddingTaskApplication {
         //csvToJson();
         readCSV();
     }
-
-    static void csvToJson() {
-        // creates an object of Scanner
-        Scanner input = new Scanner(System.in);
-        //InputStream inputStream = HngBackendBiddingTaskApplication.class.getClassLoader().getResourceAsStream(input.nextLine());
-        System.out.print("Enter file path:");
-        String filePath = input.nextLine();
-
-        try {
-            FileInputStream fstream = new FileInputStream(filePath);
-            DataInputStream in = new DataInputStream(fstream);
-            String csvAsString = new BufferedReader(new InputStreamReader(in)).lines().collect(Collectors.joining("\n"));
-            System.out.println(csvAsString);
-            String json = CDL.toJSONArray(csvAsString).toString();
-            Files.write(Path.of("output.json"), json.getBytes(StandardCharsets.UTF_8));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     static void readCSV() {
         Scanner input = new Scanner(System.in);
 
