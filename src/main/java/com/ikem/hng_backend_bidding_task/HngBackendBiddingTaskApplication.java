@@ -26,7 +26,7 @@ public class HngBackendBiddingTaskApplication {
         System.out.print("Enter file path:");
         String filePath = input.nextLine();
 
-        new File("/json").mkdirs();
+        new File("./json").mkdirs();
 
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             String[] lineInArray;
@@ -41,7 +41,7 @@ public class HngBackendBiddingTaskApplication {
                     continue;
                 }
 
-                String filename = "/json/" + lineInArray[1].trim() + ".json";
+                String filename = "./json/" + lineInArray[1].trim() + ".json";
 
 
 
